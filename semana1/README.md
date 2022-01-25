@@ -1,2 +1,3 @@
-# Transforma Tec
-Repositório para o Bootcamp Transforma Tec do Grupo Carrefour
+# Transforma Tec - Semana 1
+
+Repositório de códigos para aulas da Semana 1
