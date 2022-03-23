@@ -43,7 +43,7 @@
 
 - Login na sua conta do GitHub -> Clicar no ícone do perfil -> Settings -> SSH and GPG Keys -> New SSH Key
 - Acessar o Git Bash:
-  - ```ssh-keygen -t ed25519 -c [seu_email_do_github]``` -> Enter
+  - ```ssh-keygen -t ed25519 -C [seu_email_do_github]``` -> Enter
   - Inserir uma senha -> Repetir a senha
   - Verificar as chaves pública e privada criadas
   - Acessar a pasta onde se encontra as chaves ```cd /caminho/da/pasta```
