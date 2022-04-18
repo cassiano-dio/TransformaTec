@@ -1,10 +1,10 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
     font-family: sans-serif;
-    font-size: 14px;
+    font-size:14px;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
     justify-content: center;
 }
 
-.container{
+.container {
     display: flex;
     align-items: center;
     justify-content: start;
@@ -33,11 +33,11 @@ body {
 }
 
 .phone img{
-    height:50rem;
+    height: 50rem;
 }
 
-.continue{
-    display: flex;
+.continue {
+    display:flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
@@ -47,24 +47,25 @@ body {
 
 .continue__group{
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     background-color:white;
     width: 100%;
     padding: 1.3rem 0;
-    border: 1px solid lightgray
+    border: 1px solid lightgray;
+
 }
 
 .continue__group:nth-child(1){
     min-height: 19rem;
 }
 
-.instagram-logo{
-    height:3rem;
+.continue__instagram-logo {
+    height: 3rem;
 }
 
-.profile-photo{
+.continue__profile-photo{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,57 +73,6 @@ body {
     overflow: hidden;
 }
 
-.profile-photo img{
+.continue__profile-photo img{
     height: 6rem;
-}
-
-.continue__login{
-    background-color: #0095f6;
-    color: white;
-    padding:8px;
-    border-radius: 4px;
-}
-
-.continue__logout{
-    color: #0095f6;
-    margin-top:1rem
-}
-
-.continue__not-account{
-    color: rgb(160, 160, 160);
-}
-
-.continue__link{
-    color: #0095f6;
-}
-
-.app{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 1.3rem 0;
-}
-
-.app__download{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 1rem;
-}
-
-.app__platform{
-    height:3rem;
-    width:10rem;
-    background-size: cover;
-}
-
-.app__platform:nth-child(1){
-    background-image: url('./img/googleplay-button.png')
-}
-
-.app__platform:nth-child(2){
-    background-image: url('./img/apple-button.png')
 }
