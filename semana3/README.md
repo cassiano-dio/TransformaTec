@@ -28,6 +28,39 @@
 - Manter o repositório como público
 - Clicar em ```Create repository```
 
+### Configurando um token de acesso pessoal para acesso ao GitHub
+
+- Acessar o seu perfil -> Settings -> Developer Settings -> Personal Access Tokens
+- New personal access token
+- Inserir uma nota para o token
+- Selecionar escopo Repo
+- Copiar e salvar o token em um arquivo no seu computador (esse é o único momento onde o token será apresentado)
+- Testar:
+  - Clonar um repositório privado via HTTPS
+  - Ao abrir a tela do GitHub, inserir o personal token
+
+### Configurando uma chave SSH para acesso remoto ao GitHub
+
+- Login na sua conta do GitHub -> Clicar no ícone do perfil -> Settings -> SSH and GPG Keys -> New SSH Key
+- Acessar o Git Bash:
+  - ```ssh-keygen -t ed25519 -C [seu_email_do_github]``` -> Enter
+  - Inserir uma senha -> Repetir a senha
+  - Verificar as chaves pública e privada criadas
+  - Acessar a pasta onde se encontra as chaves ```cd /caminho/da/pasta```
+  - Acessar o conteúdo da chave pública ```cat id_ed25519.pub```
+  - Copiar o conteúdo
+- No site do GitHub:
+  -  Informar um nome para a chave em ```Title```
+  -  Inserir o conteúdo em ```Key```
+  -  Clicar em Add SSH Key e informar a sua senha quando solicitado
+-  No Git Bash:
+  - Inicialiar o SSH Agent: ```eval $(ssh-agent -s)```
+  - Informar a chave privada ao SSH Agent ```ssh-add id_ed25519```
+  - Informar a senha da sua chave SSH
+  - Enter 
+- Testar
+  - Clonar um repositório privado via SSH 
+
 ### Criando repositório local
 
 - Criar uma pasta para o projeto: ``` mkdir desafio_de_projeto-01```
