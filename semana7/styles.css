@@ -76,3 +76,94 @@ body {
 .continue__profile-photo img{
     height: 6rem;
 }
+/* continuando a partir de hoje */
+.continue__login{
+    background-color: #0095f6;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.continue__logout{
+    color: #0095f6;
+}
+
+.continue__not-account{
+    color: rgb(160, 160, 160);
+}
+
+.continue__link{
+    color: #0095f6;
+}
+
+.app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1.3rem 0;
+}
+
+.app__download{
+    display: flex;
+    width: 100%;
+    justify-content:space-evenly;
+    align-items: center;
+    padding: 1rem;
+}
+
+.app__platform{
+    height: 3rem;
+    width: 10rem;
+    background-size: cover;
+}
+
+.app__platform:nth-child(1){
+    background-image:url('./img/apple-button.png')
+}
+
+.app__platform:nth-child(2){
+    background-image:url('./img/googleplay-button.png')
+}
+
+/* Responsividade */
+
+@media only screen and (max-width: 1024px){
+    .container{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    body{
+        background-color: white;
+    }
+
+    .container{
+        width: 90%;
+    }
+
+    .phone{
+        display: none;
+    }
+
+    .continue{
+        width: 100%;
+    }
+
+    .continue__group{
+        border: 1px solid transparent;
+    }
+}
+
+@media only screen and (max-width:400px){
+    
+    .container{
+        width: 100%;
+    }
+
+    .app{
+        display: none;
+    }
+}
