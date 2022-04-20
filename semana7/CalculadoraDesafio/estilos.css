@@ -1,0 +1,68 @@
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:goldenrod;
+}
+
+body{
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 400px;
+}
+
+.buttons,.result{
+    display: flex;
+    flex-wrap: wrap;
+
+    /* flex: [flex-grow] [flex-shrink] [flex-basis];
+    flex-grow:  define a proporção com que um item deve crescer caso seja necessário
+    flex-shrink: define a proporção com que um item deve encolher caso seja necessário
+    flex-basis: define o tamanho inicial que um item deve ter antes que o espaço ao seu redor seja distribuído
+    */
+    flex: 0 1 100%;
+}
+
+.result{
+    height: 100px;
+    border: 1px solid cornflowerblue;
+    justify-content: flex-end;
+    align-items: center;
+    background: slateblue;
+    font-size: 36px;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.result:hover{
+    background:rgb(127, 113, 210)
+}
+
+.button{
+    display: flex;
+    flex: 0 1 25%;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border: 1px solid cornsilk;
+    cursor: pointer;
+    background: royalblue;
+    font-size: 24px;
+    transition: 0.5s;
+}
+
+.button:hover{
+    background: cornflowerblue
+}
+
+.zero{
+    flex-grow: 2;
+}

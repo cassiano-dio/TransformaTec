@@ -1,0 +1,76 @@
+*{
+    /* calcula o tamanho que o elemento ocupa na tela incluindo border e padding */
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:aliceblue
+}
+body{
+    /* flexbox */
+    display:flex;
+
+    /* define o alinhamento dos itens ao longo do eixo principal do container - ao centro. */
+    justify-content: center;
+
+    /* define o alinhamento dos itens ao longo do eixo transversal do container - ao início. */
+    align-items: flex-start;
+}
+.container{
+    display:flex;
+    /* define uma quebra a linha */
+    flex-wrap: wrap;
+    min-width:400px;
+}
+
+.buttons,.result{
+    display: flex;
+    flex-wrap: wrap;
+
+    /* flex: [flex-grow] [flex-shrink] [flex-basis];
+    flex-grow:  define a proporção com que um item deve crescer caso seja necessário
+    flex-shrink: define a proporção com que um item deve encolher caso seja necessário
+    flex-basis: define o tamanho inicial que um item deve ter antes que o espaço ao seu redor seja distribuído
+    */
+    flex: 0 1 100%;
+}
+.result{
+    height: 100px;
+    border: 1px solid cornsilk;
+
+    /* define o alinhamento dos itens ao final do eixo principal */
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 36px;
+    background: slateblue;
+    padding: 10px;
+
+}
+
+.result:hover{
+    background: mediumslateblue;
+}
+
+.button{
+    display:flex;
+    flex: 0 1 25%;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border: 1px solid cornsilk;
+    cursor: pointer;
+    background: royalblue;
+    font-size:24px;
+}
+
+.button:hover{
+    background: cornflowerblue;
+}
+
+.zero{
+    /* flex-grow:  define a proporção com que um item deve crescer caso seja necessário */
+    flex-grow: 2;
+}
+
+.doubleBordered{
+    border: 2px solid cornsilk;
+}
+
