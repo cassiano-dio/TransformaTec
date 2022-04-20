@@ -1,7 +1,7 @@
 
 var result = document.querySelector(".result");
 var btns = document.querySelector(".buttons");
-var ops = document.querySelectorAll(".operator");
+var   = document.querySelectorAll(".operator");
 var clearToggle = false;
 var timeFlag = false;
 var valStack = [];
@@ -40,7 +40,7 @@ btns.addEventListener("click",function(e){
                 }
             }else if(btn.innerHTML === '%'){
                 resultValue = parseFloat(resultValue/100);
-                valStack.push(resultValue);
+                // valStack.push(resultValue);
                 result.innerHTML = resultValue;
                 return;
             }

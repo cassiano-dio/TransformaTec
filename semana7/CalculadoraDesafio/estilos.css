@@ -1,15 +1,12 @@
 *{
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color:goldenrod;
+    color: goldenrod;
 }
 
 body{
-
     display: flex;
-
     justify-content: center;
-
     align-items: flex-start;
 }
 
@@ -17,33 +14,30 @@ body{
     display: flex;
     flex-wrap: wrap;
     min-width: 400px;
+    border: 15px solid goldenrod;
+    background: goldenrod;
+    border-radius: 10px;
 }
 
-.buttons,.result{
-    display: flex;
+.buttons, .result{
+    display:flex;
     flex-wrap: wrap;
-
-    /* flex: [flex-grow] [flex-shrink] [flex-basis];
-    flex-grow:  define a proporção com que um item deve crescer caso seja necessário
-    flex-shrink: define a proporção com que um item deve encolher caso seja necessário
-    flex-basis: define o tamanho inicial que um item deve ter antes que o espaço ao seu redor seja distribuído
-    */
-    flex: 0 1 100%;
+    flex: 0 1 100%
 }
 
 .result{
     height: 100px;
-    border: 1px solid cornflowerblue;
     justify-content: flex-end;
     align-items: center;
-    background: slateblue;
     font-size: 36px;
+    background: slateblue;
     padding: 10px;
-    transition: 0.5s;
+    transition: 2s;
+    border-radius: 15px;
 }
 
 .result:hover{
-    background:rgb(127, 113, 210)
+    background: mediumseagreen
 }
 
 .button{
@@ -52,17 +46,22 @@ body{
     justify-content: center;
     align-items: center;
     height: 50px;
-    border: 1px solid cornsilk;
+    border: 1px solid goldenrod;
     cursor: pointer;
     background: royalblue;
-    font-size: 24px;
-    transition: 0.5s;
+    font-size: 20px;
+    border-radius: 15px;
+    transition: 2s;
 }
 
 .button:hover{
-    background: cornflowerblue
+    background: cadetblue;
 }
 
 .zero{
     flex-grow: 2;
+}
+
+.doubleBordered{
+    border:2px solid goldenrod
 }
