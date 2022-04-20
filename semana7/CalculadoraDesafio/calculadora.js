@@ -1,7 +1,7 @@
 
 var result = document.querySelector(".result");
 var btns = document.querySelector(".buttons");
-var   = document.querySelectorAll(".operator");
+var ops  = document.querySelectorAll(".operator");
 var clearToggle = false;
 var timeFlag = false;
 var valStack = [];
