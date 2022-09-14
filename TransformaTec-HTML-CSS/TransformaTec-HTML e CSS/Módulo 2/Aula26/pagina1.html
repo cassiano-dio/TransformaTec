@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padrão BEM</title>
+
+    <style>
+
+        .container{
+            background-color:burlywood
+        }
+
+        .container__nome{
+            background-color:cadetblue
+        }
+
+        .container__nome--cor{
+            background-color:cornflowerblue
+        }
+
+        .container__submit--hover:hover{
+            background-color:chartreuse
+        }
+
+        .container__submit--click:active{
+            background-color:darkgreen
+        }
+
+        .container__submit--color{
+            background-color:aquamarine
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <!-- BLOCO -->
+    <div class="container">
+
+        <p>Formulário</p>
+
+        <form action="">
+
+            <!-- ELEMENTO -->                         <!--Modificador-->
+            <input type="text" 
+            class="container__nome container__nome--cor" />
+            
+            <!-- ELEMENTO -->
+            <input type="submit" 
+                value="Enviar" 
+                class="container__submit--hover 
+                        container__submit--click
+                        container__submit--color"/>
+
+        </form>
+
+    </div>
+</body>
+</html>

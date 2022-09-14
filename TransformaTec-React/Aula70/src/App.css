@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: darkseagreen;
+  font-family: Arial, Helvetica, sans-serif;
+  color:aliceblue
+}
+
+.coin-icon{
+  max-width: 35px;
+  max-height: 45px;
+  padding-top: 10px;
+}
+
+.card{
+  text-align: center;
+  width: 200px;
+  margin: 20px 20px 20px 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: cadetblue;
+}
+
+.card:hover{
+  background-color:rgb(110, 171, 173);
+}
+
+input{
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  border-radius: 5px;
+  color: dimgray;
+  text-align: center;
+  border: transparent;
+}
+
+input:focus{
+  outline: none;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira páginas com estilos baseadas em seletores</title>
+    <style>
+        /* Estilos baseados em seletores de elementos */
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: bisque;
+            margin: 10px;
+            border: 1px solid cornflowerblue;
+        }
+
+        /* Estilos baseados em seletores de atributos com agrupamento*/
+        p[name="par3"], p[name="par2"]{
+            color:cadetblue;
+        }
+
+        /* Estilos baseados em seletores de classe*/
+        .dimensao{
+            width: 400px;
+            height: 200px;
+        }
+
+        .colorido{
+            background-color: lightcoral;
+        }
+
+        /* Estilos baseados em seletores de pseudo-classe*/
+        input:hover{
+            background-color: lightcoral;
+            width: 100px;
+        }
+
+        /* Estilos baseados em seletores de ID com pseudo-elements*/
+        #myDiv:hover{
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="myDiv">
+        <p>Conteúdo de texto dentro da primeira div</p>
+    </div>
+    <div>
+        <p name="par2">Conteúdo de texto dentro da segunda div</p>
+    </div>
+    <div class="dimensao colorido">
+        <p name="par3" >Conteúdo de texto dentro da terceira div</p>
+    </div>
+    <input type="submit" value="Enviar">
+</body>
+</html>

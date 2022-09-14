@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    
+
+    <div>
+        <input type="text" id="email" placeholder="Email" >
+        <input type="password" id="senha" placeholder="Senha" >
+        <input type="submit" value="Login" onclick="validaLogin()">
+        <p id="acesso"></p>
+    </div>
+
+</body>
+<!-- <script src="./teste-09.js"></script> -->
+<script>
+
+    class ErroLogin extends Error {
+
+        constructor(name, message){
+
+            super(message)
+
+            this.name = name
+        }
+    }
+
+    function validaTamanho(){
+
+        let senha = document.getElementById("senha").value
+
+        if (senha.length < 6) {
+
+            let erroLogin = new ErroLogin("ErroTamanho","A senha deve ter 6 ou mais caracteres")
+
+                throw erroLogin
+        }
+
+    }
+
+    function validaLogin(){
+
+        try {
+
+            validaTamanho()
+            
+            let email = document.getElementById("email").value
+            let senha = document.getElementById("senha").value
+
+            let emailSistema = "cassiano@dio.me"
+            let senhaDoSistema = "123456"
+
+            if(!senha || !email){
+
+                let erroLogin = new ErroLogin("ErroLogin","Campos em branco não são válidos")
+
+                throw erroLogin
+            }
+
+            if (senha == senhaDoSistema && email == emailSistema) {
+                
+                document.getElementById("acesso").innerHTML = "Acesso autorizado!"
+
+            } else {
+                
+                let erroLogin = new ErroLogin("ErroLogin","Credenciais do usuário estão incorretas!")
+
+                throw erroLogin
+            }
+
+
+        } catch (erro) {
+
+            document.getElementById("acesso").innerHTML = erro.message
+
+        }
+    }
+</script>
+</html>

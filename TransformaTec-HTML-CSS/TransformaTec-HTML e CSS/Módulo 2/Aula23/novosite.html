@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Responsivo</title>
+    <style>
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        html{
+            font-family: "Lucida Sans", sans-serif;
+        }
+
+        body{
+            background-color: azure
+        }
+
+        [class*="col-"]{
+            float: left;
+            padding: 15px;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .header{
+            background-color: coral;
+            color: azure;
+            padding: 15px;
+        }
+
+        .menu ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li{
+            padding: 8px;
+            margin-bottom: 7px;
+            background-color: cornflowerblue;
+        }
+
+        .menu li:hover{
+            background-color: lightblue;
+        }
+
+        .side{
+            background-color: cadetblue;
+            color: chocolate;
+            text-align: center;
+            font-size:12px;
+            padding: 15px;
+        }
+
+        .footer{
+            background-color: cornflowerblue;
+            color: antiquewhite;
+            text-align: center;
+            font-size:12px;
+            padding: 15px;
+        }
+
+        .center{
+            background-color: cadetblue;
+            color: #ffffff;
+            margin-top: 10px;
+        }
+
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+        .col-9 {
+            width: 75%;
+        }
+        .col-10 {
+            width: 83.33%;
+        }
+        .col-11 {
+            width: 91.66%;
+        }
+        .col-12 {
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 767px){
+            [class*="col-"]{
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Título do site</h1>
+    </div>
+
+    <div class="row">
+
+        <div class="col-3 menu">
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+            </ul>
+        </div>
+
+        <div class="col-6 center">
+
+            <p>Mussum Ipsum cacilds mé cevadis </p>
+
+        </div>
+
+        <div class="col-3">
+
+            <div class="side">
+
+                <h2>Titulo 1</h2>
+                <p>Mussum Ipsum</p>
+                <h2>Titulo 2</h2>
+                <p>Cacilds</p>
+                <h2>Titulo 3</h2>
+                <p>Mé Cevadis</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Acabou o suco de cevadis
+    </div>
+
+</body>
+</html>

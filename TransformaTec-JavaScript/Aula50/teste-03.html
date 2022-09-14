@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pesquisa CEP/Endereço</title>
+</head>
+<body>
+    <div style="border: solid 1px cadetblue; padding: 10px">
+        <h4>Pesquisa por CEP</h4>
+        <input type="text" id="cep" placeholder="CEP">
+        <input type="submit" value="Pesquisar CEP" id="btn_pesquisa" onclick="displayCEP()">
+    </div>
+    <br>
+    <div style="border: solid 1px cadetblue; padding: 10px">
+        <h4>Pesquisa por Endereço</h4>
+        <input type="text" placeholder="Endereço" id="logradouro">
+        <input type="text" placeholder="Cidade" id="localidade">
+        <select id="uf" name="uf">
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+            <option value="EX">Estrangeiro</option>
+        </select>
+        <input type="submit" value="Pesquisar Endereço" onclick="displayEndereco()">
+    </div>
+    <br>
+    <div  style="border: solid 1px cadetblue; padding: 10px">
+       <p id="endereco"></p>
+    </div>
+</body>
+
+<script>
+
+    const displayCEP = async () => {
+
+        const endereco = await pesquisaCEP()
+
+        document.getElementById("endereco").innerHTML = JSON.stringify(endereco)
+    }
+
+    const displayEndereco = async () => {
+
+        const enderecos = await pesquisaEndereco()
+
+        document.getElementById("endereco").innerHTML = JSON.stringify(enderecos)
+
+    }
+
+    const pesquisaCEP = async () => {
+
+        const cep = document.getElementById("cep").value
+
+        const viacep_url = `https://viacep.com.br/ws/${cep}/json/`
+
+        console.log(viacep_url)
+
+        try {
+            
+            const resultado = await fetch(viacep_url)
+            const resultado_json = await resultado.json()
+
+            return resultado_json
+
+        } catch (erro) {
+            return erro.message
+        }
+
+    }
+
+    const pesquisaEndereco = async () => {
+
+        const logradouro = document.getElementById("logradouro").value
+        const uf = document.getElementById("uf").value
+        const localidade = document.getElementById("localidade").value
+
+        console.log(logradouro," ",uf, " ", localidade)
+
+        const viacep_url = `https://viacep.com.br/ws/${uf}/${localidade}/${logradouro}/json/`
+
+        try {
+            const resultado = await fetch(viacep_url)
+            const resultado_json = await resultado.json()
+
+            return resultado_json
+
+        } catch (erro) {
+            return erro.message
+        }
+
+    }
+
+
+</script>
+</html>

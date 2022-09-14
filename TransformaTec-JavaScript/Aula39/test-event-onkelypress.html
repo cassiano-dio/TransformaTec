@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="nome">
+
+    <p id="resultado"></p>
+
+    <script>
+        document.getElementById("nome").onkeypress = function(){
+
+            let letra =  document.getElementById("nome").value
+
+            document.getElementById("resultado").innerHTML = letra
+
+        }
+    </script>
+</body>
+</html>

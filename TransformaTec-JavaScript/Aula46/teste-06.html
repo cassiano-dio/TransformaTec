@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text"   id="nome" placeholder="Nome">
+        <input type="number" id="idade" placeholder="idade">
+        <input type="text"   id="cpf" placeholder="CPF">
+        <input type="text"   id="profissao" placeholder="Profissao">
+
+        <input type="submit" value="Cadastrar" onclick="cadastrar()">
+
+        <p id="resposta"></p>
+
+    </div>
+</body>
+
+<script>
+
+//declarando uma classe ErroFormulario que recebe (herda) atributos e métodos da classe Error (classe pai)
+class ErroFormulario extends Error{
+    //método para construir um objeto da classe ErroFormulario
+    constructor(name, message){
+        
+        //sobrescrevendo o valor da propriedade (atributo) message com o valor que vem do erro da função
+        super(message)
+
+        //atribuindo um valor para a propriedade (atributo) name com o nome personalizado do erro
+        this.name = name
+    }
+}
+
+
+class ErroCPF extends Error{
+    //método para construir um objeto da classe ErroCPF
+    constructor(name, message){
+        
+        //sobrescrevendo o valor da propriedade (atributo) message com o valor que vem do erro da função
+        super(message)
+
+        //atribuindo um valor para a propriedade (atributo) name com o nome personalizado do erro
+        this.name = name
+    }
+}
+
+
+function cadastrar(){
+
+
+    try {
+
+        let nome = document.getElementById("nome").value
+        let idade = document.getElementById("idade").value
+        //forçando erro de variável sem valor
+        let profissao = document.getElementById("profissao").value
+        let cpf = document.getElementById("cpf").value
+
+        if(!nome || !idade || !profissao || !cpf){
+
+            //criando um novo objeto da classe ErroFormulario passando cmo parâmetro o nome e a mensagem
+            let erroFormulario = new ErroFormulario("ErroFormulario","Campos em branco não permitidos")
+
+            //dispara (lança) um erro que será capturado no catch
+            throw erroFormulario
+
+        }else{
+
+            if(cpf.length != 11){
+
+                let erroCPF = new ErroCPF("ErroCPF","Quantidade de carcteres inválida para o CPF")
+
+                throw erroCPF
+            }
+            document.getElementById("resposta").innerHTML = "Usuário cadastrado"
+        }
+
+        //captura o erro enviado pelo throw e coloca o valor na variável "erro" do catch
+        } catch (erro) {
+            document.getElementById("resposta").innerHTML = erro.message
+        }
+
+}
+
+</script>
+</html>

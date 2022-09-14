@@ -1,0 +1,17 @@
+.transactionsListContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid cadetblue;
+    margin-bottom: 5%;
+
+}
+
+.transactionLine{
+    display: flex;
+    padding: 5px;
+    margin-bottom: 5px;
+    width:75%;
+    justify-content: center;
+}

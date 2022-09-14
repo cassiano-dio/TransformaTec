@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pesquisar por endereço - ViaCEP</title>
+</head>
+<body>
+    <div>
+
+        <input type="text" id="logradouro" placeholder="Logradouro">
+        <input type="text" id="localidade" placeholder="Localidade">
+        <select name="ufs" id="uf">
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+            <option value="EX">Estrangeiro</option>
+        </select>
+
+        <p id="endereco"></p>
+
+        <input type="submit" id="buscaCEP" value="Buscar CEP" onclick="buscaCEP()">
+
+    </div>
+</body>
+
+<script>
+
+    function buscaCEP(){
+        let logradouro = document.getElementById("logradouro").value
+        let localidade = document.getElementById("localidade").value
+        let uf = document.getElementById("uf").value
+
+        console.log(logradouro, " ", localidade, " ",uf)
+
+        //http://viacep.com.br/ws/${uf}/${cidade}/${rua}/json
+
+        const viacep_url = `https://viacep.com.br/ws/${uf}/${localidade}/${logradouro}/json`
+
+        console.log(viacep_url)
+
+        fetch(viacep_url)
+        .then(response => response.json())
+        .then(json => {
+            document.getElementById("endereco").innerHTML = JSON.stringify(json[1])
+            console.log(json)
+        
+        })
+        .catch(err => console.log(err))
+    }
+
+
+</script>
+</html>

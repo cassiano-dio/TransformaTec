@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div id="principal">
+        <input type="submit" id="borso" value="Borso" onclick="votarBorso()">
+        <input type="submit" id="molusco" value="Molusco" onclick="votarMolusco()">
+        <input type="submit" id="margarina" value="Margarina" onclick="votarMargarina()">
+        <input type="submit" id="ciranda" value="Ciranda" onclick="votarCiranda()">
+
+        <p id="votos"></p>
+    </div>
+
+    <script>
+
+        let borso_votos = 0
+        let molusco_votos = 0
+        let margarina_votos = 0
+        let ciranda_votos = 0
+
+        const borso_btn = document.getElementById("borso")
+        const molusco_btn = document.getElementById("molusco")
+        const margarina_btn = document.getElementById("margarina")
+        const ciranda_btn = document.getElementById("ciranda")
+
+        async function votarBorso(){
+
+            let candidato = borso_btn.value
+
+            await incrementaVoto(candidato)
+
+        }
+
+        async function votarMolusco(){
+
+            let candidato = molusco_btn.value
+
+            await incrementaVoto(candidato)
+        }
+
+        async function votarMargarina(){
+
+
+            let candidato = margarina_btn.value
+
+            await incrementaVoto(candidato)
+
+        }
+
+        async function votarCiranda(){
+
+            let candidato = ciranda_btn.value
+
+            await incrementaVoto(candidato)
+
+        }
+
+
+        async function incrementaVoto(candidato){
+
+            if(candidato == "Borso"){
+                borso_votos ++
+            }else if(candidato == "Molusco"){
+                molusco_votos ++
+            }else if( candidato == "Margarina"){
+                margarina_votos ++
+            }else{
+                ciranda_votos ++
+            }
+
+            await mostrarVotos()
+
+        }
+
+        async function mostrarVotos(){
+
+            document.getElementById("votos").innerHTML = 
+                " - Borso: " + borso_votos + 
+                " - Molusco: " + molusco_votos +
+                " - Margarina: " + margarina_votos +
+                " - Ciranda: " + ciranda_votos
+        }
+
+    </script>
+</body>
+</html>

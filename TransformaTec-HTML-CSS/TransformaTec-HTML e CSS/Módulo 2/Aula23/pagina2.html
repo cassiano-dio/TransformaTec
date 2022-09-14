@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha segunda página responsiva</title>
+    <style>
+        div{
+            background-color:bisque;
+        }
+        h1{
+            color:cadetblue;
+            font-family: "Courier New";
+        }
+        p{
+            color:cadetblue;
+            font-family: "Courier New";
+        }
+
+        /*Resolução em celulares*/
+        @media screen and (max-width:767px){
+            div{
+                background-color: cadetblue;
+            }
+            h1{
+                color: bisque;
+                font-family: "Courier New";
+            }
+            p{
+                color: bisque;
+                font-family: "Courier New";
+            }
+        }
+
+        /*Resolução em tablets*/
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            div{
+                background-color: darkgray;
+            }
+            h1{
+                color: cornflowerblue;
+                font-family: "Courier New";
+            }
+            p{
+                color: cornflowerblue;
+                font-family: "Courier New";
+            }
+        }
+
+        /*Resolução em desktops*/
+        @media screen and (min-width: 1024px) {
+            div{
+                background-color: burlywood;
+            }
+            h1{
+                color: cornflowerblue;
+                font-family: "Courier New";
+            }
+            p{
+                color: cornflowerblue;
+                font-family: "Courier New";
+            }
+        }
+
+        /*Resolução em desktops de alta resolução*/
+        @media screen and (min-width: 1280px) {
+            div{
+                background-color: coral;
+            }
+            h1{
+                color: antiquewhite;
+                font-family: "Courier New";
+            }
+            p{
+                color: antiquewhite;
+                font-family: "Courier New";
+            }
+        }
+
+
+    </style> 
+</head>
+<body>
+    <div>
+        <h1>Mussum Ipsum</h1>
+        <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.Viva Forevis aptent taciti sociosqu ad litora torquent.Cevadis im ampola pa arma uma pindureta.
+        </p>
+    </div>
+</body>
+</html>

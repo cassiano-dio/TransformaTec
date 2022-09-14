@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pesquisa CEP - async/await</title>
+</head>
+<body>
+    <p id="endereco"></p>
+    <p id="rua"></p>
+    <p id="cidade"></p>
+    <p id="bairro"></p>
+</body>
+
+<script>
+
+    // async function pesquisaCep(){
+    // }
+
+    const mostrarDados = async () => {
+
+        const data = await pesquisaCep()
+
+        document.getElementById("endereco").innerHTML = JSON.stringify(data)
+
+    }
+
+    const mostrarEndereco = async () => {
+
+        const data = await pesquisaCep()
+
+        document.getElementById("rua").innerHTML = JSON.stringify(data.logradouro)
+        document.getElementById("bairro").innerHTML = JSON.stringify(data.bairro)
+        document.getElementById("cidade").innerHTML = JSON.stringify(data.localidade)
+
+    }
+
+    const pesquisaCep = async () =>{
+
+        const viacep_url = "https://viacep.com.br/ws/010 01000/json/"
+
+
+        try {
+
+            const result = await fetch(viacep_url)
+
+            const json_result = await result.json()
+
+            console.log(json_result)
+
+            return json_result;
+            
+        } catch (erro) {
+            console.log(erro)
+
+            return erro
+        }
+
+    }
+
+    mostrarDados()
+    mostrarEndereco()
+
+</script>
+
+
+</html>

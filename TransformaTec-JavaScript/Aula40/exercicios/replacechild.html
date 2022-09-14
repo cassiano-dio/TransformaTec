@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul id="minhalista">
+        <li>Café</li>
+        <li>Manteiga</li>
+        <li>Margarina</li>
+    </ul>
+
+    <button onclick="substituir()">Substituir</button>
+
+    <script>
+
+        function substituir(){
+            const elemento = document.getElementById("minhalista").children[0] //<li>Café</li>
+
+            console.log(elemento)
+
+            const novo_elemento = document.createTextNode("Leite")
+
+            console.log(elemento.childNodes)//texto "Café"
+
+            //substituir conteudo de texto do item da lista
+            elemento.replaceChild(novo_elemento,elemento.childNodes[0])
+            //elemento.text
+        }
+        
+    </script>
+
+</body>
+</html>

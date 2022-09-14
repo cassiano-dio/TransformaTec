@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pesquisa CEP - Promise</title>
+</head>
+<body>
+    <p id="result"></p>
+</body>
+
+<script>
+
+    const viacep_url = "https://viacep.com.br/ws/01001000/json/"
+
+    fetch(viacep_url)
+    .then(
+        
+        result => {
+            console.log("Tipo do resultado do fetch: ", typeof(result))
+            return result.json()
+        }
+    )
+    .then(
+        json_response => {
+            console.log("Resultado da pesquisa do CEP: ", json_response)
+            return json_response
+        }
+        
+    ).then(
+        json_resp => {
+
+            const add = JSON.stringify(json_resp)
+            console.log("Json resp depois do stringify: ", typeof(add))
+            document.getElementById("result").innerHTML = add
+        }
+    )
+
+</script>
+</html>

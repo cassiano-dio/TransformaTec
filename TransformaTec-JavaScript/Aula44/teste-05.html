@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Formulário de cadastro de usuário</title>
+</head>
+<body>
+    <div id="formulario">
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="text" id="sobrenome" placeholder="Sobrenome">
+        <input type="text" id="endereco" placeholder="Endereco">
+        <input type="number" id="cep" placeholder="CEP">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="senha" placeholder="Senha">
+        <input type="password" id="confirma" placeholder="Confirmar senha">
+
+        <input type="submit" id="enviar_btn" value="Enviar" onclick="cadastrar()">
+    </div>
+
+    <p id="resultado"></p>
+
+    <script>
+
+        function cadastrar(){
+            let promessa = new Promise(
+                function(sucesso, erro){
+
+                    //obtendo os valores dos campos 
+                    let nome = document.getElementById("nome").value
+                    let sobrenome = document.getElementById("sobrenome").value
+                    let endereco = document.getElementById("endereco").value
+                    let cep = document.getElementById("cep").value
+                    let email = document.getElementById("email").value
+                    let senha = document.getElementById("senha").value
+                    let confirma = document.getElementById("confirma").value
+
+                    //verificando se há campos vazios
+                    if(!nome || !sobrenome || !endereco || !cep || !email || !senha || !confirma){
+                        erro("Não são permitidos campos em branco!")
+                    }else if(senha != confirma){
+                        erro("Senhas não conferem!")
+                    }else{
+
+                        //retornando o usuário cadastrado
+                        let usuario = {
+                            "nome": nome,
+                            "sobrenome": sobrenome,
+                            "endereco": endereco,
+                            "cep": cep,
+                            "email": email
+                        }
+                        sucesso(JSON.stringify(usuario))
+                    }
+                }
+            ).then(
+                function(sucesso){
+                    exibir(sucesso)
+                }
+            ).catch(
+                function(erro){
+                    exibir(erro)
+                }
+            )
+        }
+
+        function exibir(mensagem){
+            document.getElementById("resultado").innerHTML = mensagem
+        }
+
+    </script>
+</body>
+</html>

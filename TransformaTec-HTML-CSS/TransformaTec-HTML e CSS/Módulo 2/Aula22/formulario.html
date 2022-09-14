@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Estilizado</title>
+    <style>
+
+        /* Estilos baseados em seletores de componentes */
+        div{
+            width:50%;
+            height:600px;
+            background-color: bisque;
+            margin:0 auto;
+            padding:10px;
+            border:1px solid cornflowerblue;
+        }
+
+        label{
+            color: cadetblue;
+            font-size: 16px;
+            text-align: center;
+            font-family: Verdana, Arial, Helvetica, sans-ser;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Estilos baseados em seletores de classe  */
+
+        .dados{
+            padding: 12px 20px;
+            margin: 8px 0;
+            display:flex;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .dados:hover{
+            background-color: #f1f1f1;
+        }
+
+        /* Estilos baseados em seletores de ID */
+
+        #button{
+            background-color:cadetblue;
+            border: none;
+            color: white;
+            display:block;
+            padding: 15px 32px;
+            margin: 4px 2px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        #button:hover{
+            background-color: cornflowerblue;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <div>
+
+        <form action="">
+
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" class="dados">
+
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" name="sobrenome" id="sobrenome" class="dados">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="dados">
+
+            <label for="data">Data de nascimento</label>
+            <input type="date" name="data" id="data" class="dados">
+
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" class="dados">
+
+            <label for="confirmar">Confirmar senha</label>
+            <input type="password" name="confirmar" id="confirmar" class="dados">
+
+            <input type="submit" value ="Confirmar" id="button" onclick="getData()">
+
+        </form>
+
+    </div>
+
+</body>
+<script>
+    function getData(){
+        var nome = document.getElementById("nome").value;
+        var sobrenome = document.getElementById("sobrenome").value;
+        var email = document.getElementById("email").value;
+        var data = document.getElementById("data").value;
+        var senha = document.getElementById("senha").value;
+        var confirmar = document.getElementById("confirmar").value;
+
+        alert("Nome: " + nome + "\nSobrenome: " + sobrenome + "\nEmail: " + email + "\nData de nascimento: " + data + "\nSenha: " + senha + "\nConfirmar senha: " + confirmar);
+    }
+</script>
+</html>

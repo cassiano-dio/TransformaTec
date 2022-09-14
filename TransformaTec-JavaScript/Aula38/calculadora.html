@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Document</title>
+    </head>
+    <body>
+
+        <div class="header">
+            <h3>Calculadora DOM</h3>
+        </div>
+
+        <div class="content">
+
+            <input type="number" name="n1" id="n1" class="input_number" placeholder="Número 1">
+
+            <input type="number" name="n2" id="n2" class="input_number" placeholder="Número 2">
+
+            <input type="button" value="+" id="sum" class="btn_calculate" onclick="sum()">
+
+            <input type="button" value="Limpar" id="reset" class="btn_calculate" onclick="reset()">
+
+            <p id="result" class="result">Resultado:</p>
+
+        </div>
+
+        <script>
+
+        function reset(){
+
+            document.getElementById("n1").value = ""
+            
+            document.getElementById("n2").value = ""
+
+            document.getElementById("result").innerHTML = "Resultado: "
+
+        }
+
+        function sum(){
+
+            var n1 = document.getElementById("n1").value
+
+            var n2 = document.getElementById("n2").value
+
+            n1 = Number(n1)
+            n2 = Number(n2)
+
+            var result = n1 + n2;
+
+            document.getElementById("result").innerHTML += result
+
+        }
+
+    </script>
+
+    </body>
+</html>

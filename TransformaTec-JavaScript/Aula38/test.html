@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="header">Olá</h1>
+    <button id="btn">Reset</button>
+        </div>
+<script>
+//getElementById(): retorna o elemento que estiver contendo o nome do ID passado
+        var myElement = document.getElementsById('header')
+//getElementsByClassName(): Esse método retorna um HTMLCollection de todos elementos que estiverem contendo o nome da classe passada.
+        var myElement = document.getElementsByClassName('container')
+//getElementsByTagName(): Esse método retorna um HTMLCollection de todos elementos contendo a tag name passada.
+        var myElement = document.getElementsByTagName('h1')
+//querySelector(): Esse método retorna o primeiro elemento que se equipara ao seletor CSS passado. Caso não haja um seletor, retorna null.
+        var myElement = document.querySelector('#btn)
+//querySelectorAll(): Esse método retorna todos os elementos que se equiparam ao seletor CSS passado. Caso não haja um seletor, retorna null.
+        var myElement = document.querySelector('#btn')
+//Os elementos DOM possuem além de métodos, os eventos, responsáveis pela interatividade dos elementos o documento.
+        myBtn.addEventListener('click', function(event) {
+ // Lógica.
+}, false);
+//Os parâmetros do addEventListener() são: ● O tipo de evento (nesse caso ‘click’). ● A função de callback ● O useCapture faz o evento se atrelar ao pai até chegar ao filho.
+//● select: Disparar uma ação quando o elemento for selecionado.
+myBtn.addEventListener('select', function(event) {
+ alert('Elemento selecionado!');
+ }, false);
+//Os parâmetros do addEventListener() são: ● O tipo de evento (nesse caso ‘click’). ● A função de callback ● O useCapture faz o evento se atrelar ao pai até chegar ao filho. 
+
+
+</script>
+
+</body>
+</html>

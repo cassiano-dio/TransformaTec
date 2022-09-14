@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculadora de Promise</title>
+</head>
+<body>
+    <h4> Calculadora</h4>
+    <p id="resultado"></p>
+</body>
+<script>
+    function display(mensagem){
+        document.getElementById("resultado").innerHTML = mensagem
+    }
+    const promessa = new Promise(
+        function(sucesso, erro){
+            var a = 10;
+            var b = 20
+            var c = a + b
+            if(!c){
+                erro("Erro ao executar a função")
+            }else{
+                sucesso("A soma é: " + c)
+            }
+        }
+    )
+    promessa.then(
+        function(sucesso){
+            display(sucesso)
+        }
+    ).catch(
+        function(erro){
+            display(erro)
+        }
+    )
+</script>
+</html>

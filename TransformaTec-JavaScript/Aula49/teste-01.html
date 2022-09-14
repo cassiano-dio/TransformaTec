@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Teste Fetch - ViaCEP</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    const viacep_url = "https://viacep.com.br/ws/44470000/json/"
+
+    fetch(viacep_url)
+    .then(
+        (response) => response.json()
+    )
+    .then(
+        json => console.log(json)
+    )
+
+</script>
+
+</html>
