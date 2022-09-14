@@ -1,0 +1,62 @@
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: darkseagreen;
+}
+
+.card{
+  text-align: center;
+  width: 60px;
+  cursor: pointer;
+  margin: 0 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.card.selected {
+  border: 1px solid cadetblue;
+  background-color: cadetblue;
+  border-radius: 5px
+}
+
+.coin-icon{
+  max-width: 45px;
+  max-height: 55px;
+  padding-top: 10px;
+}
+
+.buy-form-container{
+  display: flex;
+  flex-direction: column;
+  padding-top: 5%;
+  align-items: center;
+  padding-bottom: 5%;
+  border-radius: 5px;
+  border: 1px solid cadetblue;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.button-input:hover, .brl-input:hover, .card:hover{
+  background-color:rgb(110, 171, 173);
+}
+
+.brl-input{
+  background-color: cadetblue;
+}
+
+.brl-input:focus{
+  background-color: rgb(110, 171, 173);
+  outline: none;
+}
+
+.transaction-name, .transaction-value, .empty-list-title{
+  color: slategrey;
+  padding-left: 10%;
+}
+
+h4, h5{
+  color: slategrey;
+  font-family: Arial, Helvetica, sans-serif;
+}

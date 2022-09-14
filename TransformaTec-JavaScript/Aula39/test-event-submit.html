@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <form action="" id="my_form">
+
+            <input type="text" name="name" id="name" placeholder="Informe seu nome">
+
+            <input type="text" name="last_name" id="last_name" placeholder="Informe seu sobrenome">
+
+            <input type="number" name="age" id="age" placeholder="Informe a sua idade">
+
+            <input type="email" id="email" placeholder="Informe seu email">
+
+            <input type="password" name="password" id="password" placeholder="Informe sua senha">
+
+            <input type="password" name="confirm" id="confirm" placeholder="Confirme sua senha">
+
+            <input type="submit" id="submit_btn" value="Cadastrar">
+
+        </form>
+        <script>
+
+            document.getElementById("my_form").addEventListener("submit",submitForm)
+    
+            function submitForm(){
+    
+                let name = document.getElementById("name").value;
+                let last_name = document.getElementById("last_name").value;
+                let age = document.getElementById("age").value;
+                let email = document.getElementById("email").value;
+                let password = document.getElementById("password").value;
+                let confirm = document.getElementById("confirm").value;
+    
+                if(name=="" || last_name=="" || age=="" || email==""|| password=="" || confirm==""){
+                    alert("Não são permitidos campos vazios")
+                }else{
+    
+                    if(password != confirm){
+                        alert("Senhas não conferem")
+                    }else{
+                        alert("Email " + email + " cadastrado com sucesso!")
+                    }
+                }
+            }
+    
+        </script>
+    </div>
+
+</body>
+</html>

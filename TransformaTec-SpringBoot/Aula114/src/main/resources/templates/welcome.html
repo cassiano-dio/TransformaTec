@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início</title>
+</head>
+<body>
+    <div style="text-align: center;">
+
+        <h2 th:inline="text">Seja bem vindo [[${#httpServletRequest.remoteUser}]]</h2>
+
+        <div sec:authorize="hasRole('ADMIN')">
+            <a href="/cpanel">Painel de administração</a>
+        </div>
+
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout" />
+        </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input list="books">
+
+    <datalist id="books">
+      <option value="Prince Caspian">
+      <option value="The Voyage of the Dawn Treader">
+      <option value="The Silver Chair">
+      <option value="The Horse and His Boy">
+      <option value="The Magician's Nephew">
+      <option value="The Last Battle">
+    </datalist>
+
+    <script>
+        let books = document.getElementById("books");
+
+        let book = document.createElement('option');
+        book.setAttribute('value', 'The Lion, the Witch and the Wardrobe');
+
+        books.insertBefore(book, books.firstChild);
+    </script>
+</body>
+</html>

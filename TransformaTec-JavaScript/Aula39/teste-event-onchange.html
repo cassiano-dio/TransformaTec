@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Selecione o seu artista preferido</p>
+
+    <select id="artistas" onchange="selecionarArtista()">
+    
+        <option value="Raimundos">Raimundos</option>
+        <option value="Tim Maia">Tim Maia</option>
+        <option value="Bezerra da Silva">Bezerra da Silva</option>
+        <option value="LegiÃ£o Urbana">Legião Urbana</option>
+        <option value="O Rappa">O Rappa</option>
+
+    </select>
+
+    <p id="resultado"></p>
+
+    <script>
+
+        function selecionarArtista(){
+            let artista = document.getElementById("artistas").value
+
+            document.getElementById("resultado").innerHTML = "Musica da boa: " + artista
+        }
+
+
+    </script>
+</body>
+</html>

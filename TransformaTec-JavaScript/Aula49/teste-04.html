@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Busca CEP</title>
+</head>
+<body>
+    <input type="text" id="cep" placeholder="CEP">
+    <input type="submit" name="" id="submit" onclick="buscaCEP()">
+
+    <p id="endereco"></p>
+
+</body>
+
+<script>
+
+    function buscaCEP(){
+
+        let cep = document.getElementById("cep").value
+
+        let endereco = document.getElementById("endereco")
+
+        let viacep_url = `https://viacep.com.br/ws/${cep}/json/`
+
+        fetch(viacep_url)
+        .then(response => response.json())
+        .then(json => {
+            endereco.innerHTML = JSON.stringify(json)
+        })
+    }
+
+
+
+</script>
+
+
+</html>

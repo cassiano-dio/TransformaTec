@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Consulta JSONPlaceholder</title>
+</head>
+<body>
+    <div>
+        <p id="todo"></p>
+        <p id="todo_id"></p>
+        <p id="todo_title"></p>
+        <p id="todo_userId"></p>
+        <p id="todo_completed"></p>
+    </div>
+    <script>
+        const todo_url = `https://jsonplaceholder.typicode.com/todos/1`
+        fetch(todo_url)
+        //resultado da promessa de retorno do dado pesquisado do servidor
+        .then(response => response.json())
+        //resultado da promessa de converter o dado retornado do servidor para JSON
+        .then((json) => {
+            //apresentação dos dados retornados do servidor
+            document.getElementById("todo").innerHTML = "TODO: " + JSON.stringify(json)
+            document.getElementById("todo_id").innerHTML = "TODO ID: " + json.id
+            document.getElementById("todo_title").innerHTML = "TODOS TITLE: " + json.title
+            document.getElementById("todo_userId").innerHTML = "TODO USER ID: " + json.userId
+            document.getElementById("todo_completed").innerHTML = "TODO STATUS: " + json.completed
+        })
+        .catch(err => console.log(erro))
+    </script>
+</body>
+</html>

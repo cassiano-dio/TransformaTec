@@ -1,0 +1,24 @@
+.p{
+    color:chocolate;
+    background-color:darkcyan;
+    font-size:32px;
+}
+.h1{
+    color:chocolate;
+    border: 0.5px dashed darkgrey;
+}
+.p2{
+    color:cadetblue
+}
+.p3{
+    color:rgb(72, 134, 66);
+    background-color:cadetblue;
+    font-size:20px;
+}
+.p4{
+    color:rgb(69, 41, 146);
+    background-color:rgb(109, 96, 41)
+}
+body{
+    background-color:rgb(125, 171, 185);
+}

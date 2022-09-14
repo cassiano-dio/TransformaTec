@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //criação do elemento de forma dinâmica
+        let elemento = document.createElement("p");
+
+        //conteúdo de texto do elemento
+        elemento.innerHTML = "Meu parágrafo criado no JS"
+
+        //propriedades de estilização
+        elemento.style.color = "coral"
+        elemento.style.fontSize = "25px"
+
+        //criação do elemento de forma dinâmica
+        let novo_elemento = document.createElement("div")
+
+        //propriedades de estilização
+        novo_elemento.style.backgroundColor = "cadetblue"
+        novo_elemento.style.padding = "5px"
+        novo_elemento.style.borderRadius = "5px"
+
+        //texto do elemento
+        novo_elemento.innerHTML = "Ola mundo"
+
+        //colocando elementos no HTML
+        document.body.appendChild(elemento)
+        document.body.appendChild(novo_elemento)
+
+    </script>
+
+</body>
+</html>
